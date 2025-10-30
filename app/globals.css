@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-brewfi-dark text-white antialiased;
+  }
+}
+
+@layer components {
+  .glow-text {
+    text-shadow: 0 0 20px rgba(0, 255, 178, 0.6),
+                 0 0 40px rgba(0, 255, 178, 0.4),
+                 0 0 60px rgba(0, 255, 178, 0.2);
+  }
+
+  .glow-text-subtle {
+    text-shadow: 0 0 10px rgba(0, 255, 178, 0.4),
+                 0 0 20px rgba(0, 255, 178, 0.2);
+  }
+
+  .btn-primary {
+    @apply bg-brewfi-green text-brewfi-dark px-8 py-4 rounded-lg font-bold text-lg
+           transition-all duration-300 hover:shadow-neonHover hover:scale-105
+           active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-brewfi-green text-brewfi-green px-8 py-4 rounded-lg
+           font-bold text-lg transition-all duration-300 hover:bg-brewfi-green
+           hover:text-brewfi-dark hover:shadow-neonHover hover:scale-105
+           active:scale-95;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+  }
+
+  .card-dark {
+    @apply bg-brewfi-darkGray border border-gray-800 rounded-xl p-8
+           transition-all duration-300 hover:border-brewfi-green/50
+           hover:shadow-lg hover:shadow-brewfi-green/10;
+  }
+}
+
+@layer utilities {
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px rgba(0, 255, 178, 0.4),
+                   0 0 20px rgba(0, 255, 178, 0.2);
+    }
+    to {
+      text-shadow: 0 0 20px rgba(0, 255, 178, 0.8),
+                   0 0 40px rgba(0, 255, 178, 0.4),
+                   0 0 60px rgba(0, 255, 178, 0.2);
+    }
+  }
+}
