@@ -263,7 +263,7 @@ export default function Home() {
       <section className="section-container bg-brewfi-darkGray/50 text-center relative overflow-hidden min-h-[360px] md:min-h-[420px]">
         {/* Background banner image for CTA (preserves 1608x608 ratio) */}
         <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
-          <div className="absolute inset-0 hidden">
+          <div className="absolute inset-0 hidden md:block">
             <Image
               src="/1.png"
               alt="BrewFi CTA banner"
