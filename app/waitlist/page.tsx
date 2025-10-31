@@ -2,13 +2,15 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { CheckCircle, Coffee, Rocket, Flame, Zap, DollarSign, GraduationCap } from "lucide-react";
 
 export default function WaitlistPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     cafeName: "",
-    city: "",
+    country: "",
+    otherCountry: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -25,7 +27,7 @@ export default function WaitlistPage() {
     setIsSubmitting(false);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -36,9 +38,12 @@ export default function WaitlistPage() {
     return (
       <div className="min-h-screen flex items-center justify-center section-container">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="text-8xl mb-8 animate-bounce">✅</div>
-          <h1 className="text-5xl font-bold mb-6 glow-text font-grotesk">
-            ¡Bienvenido a BrewFi! ☕
+          <div className="text-brewfi-green mb-8 animate-bounce flex justify-center">
+            <CheckCircle className="w-32 h-32" />
+          </div>
+          <h1 className="text-5xl font-bold mb-6 glow-text font-grotesk flex items-center justify-center gap-3">
+            ¡Bienvenido a BrewFi! 
+            <Coffee className="w-12 h-12" />
           </h1>
           <p className="text-xl text-gray-300 mb-8 leading-relaxed">
             Gracias por unirte a la lista de espera, <span className="text-brewfi-green font-semibold">{formData.name}</span>.
@@ -64,11 +69,13 @@ export default function WaitlistPage() {
         <div className="max-w-2xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 glow-text font-grotesk">
-              Únete a la Revolución ☕🚀
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 glow-text font-grotesk flex items-center justify-center gap-4">
+              Únete a la Revolución 
+              <Coffee className="w-14 h-14" />
+              <Rocket className="w-14 h-14" />
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed">
-              Completa el formulario y sé una de las primeras 100 cafeterías en acceder a BrewFi.
+              Completa el formulario y sé una de las primeras 50 cafeterías en acceder a BrewFi.
             </p>
           </div>
 
@@ -131,32 +138,65 @@ export default function WaitlistPage() {
               />
             </div>
 
-            {/* City */}
+            {/* Country */}
             <div>
-              <label htmlFor="city" className="block text-sm font-semibold text-brewfi-green mb-2">
-                Ciudad *
+              <label htmlFor="country" className="block text-sm font-semibold text-brewfi-green mb-2">
+                País *
               </label>
-              <input
-                type="text"
-                id="city"
-                name="city"
+              <select
+                id="country"
+                name="country"
                 required
-                value={formData.city}
+                value={formData.country}
                 onChange={handleChange}
                 className="w-full bg-brewfi-dark border border-gray-700 rounded-lg px-4 py-3 text-white
                           focus:outline-none focus:border-brewfi-green focus:ring-2 focus:ring-brewfi-green/50
                           transition-all duration-300"
-                placeholder="Ciudad de México"
-              />
+              >
+                <option value="">Selecciona un país</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Chile">Chile</option>
+                <option value="Costa Rica">Costa Rica</option>
+                <option value="Mexico">México</option>
+                <option value="Other">Otro</option>
+              </select>
             </div>
+
+            {/* Other Country Input */}
+            {formData.country === "Other" && (
+              <div>
+                <label htmlFor="otherCountry" className="block text-sm font-semibold text-brewfi-green mb-2">
+                  Especifica tu país *
+                </label>
+                <input
+                  type="text"
+                  id="otherCountry"
+                  name="otherCountry"
+                  required
+                  value={formData.otherCountry}
+                  onChange={handleChange}
+                  className="w-full bg-brewfi-dark border border-gray-700 rounded-lg px-4 py-3 text-white
+                            focus:outline-none focus:border-brewfi-green focus:ring-2 focus:ring-brewfi-green/50
+                            transition-all duration-300"
+                  placeholder="Escribe tu país"
+                />
+              </div>
+            )}
 
             {/* Submit Button */}
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
-              {isSubmitting ? "Enviando..." : "🔥 Unirme a la Lista de Espera"}
+              {isSubmitting ? (
+                "Enviando..."
+              ) : (
+                <>
+                  <Flame className="w-5 h-5" />
+                  Unirme a la Lista de Espera
+                </>
+              )}
             </button>
 
             {/* Privacy Notice */}
@@ -168,15 +208,21 @@ export default function WaitlistPage() {
           {/* Benefits Reminder */}
           <div className="mt-12 grid md:grid-cols-3 gap-6">
             <div className="text-center">
-              <div className="text-4xl mb-2">⚡</div>
+              <div className="text-brewfi-green mb-2 flex justify-center">
+                <Zap className="w-12 h-12" />
+              </div>
               <p className="text-sm text-gray-400">Acceso prioritario</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl mb-2">💰</div>
+              <div className="text-brewfi-green mb-2 flex justify-center">
+                <DollarSign className="w-12 h-12" />
+              </div>
               <p className="text-sm text-gray-400">Precios especiales</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl mb-2">🎓</div>
+              <div className="text-brewfi-green mb-2 flex justify-center">
+                <GraduationCap className="w-12 h-12" />
+              </div>
               <p className="text-sm text-gray-400">Capacitación gratuita</p>
             </div>
           </div>

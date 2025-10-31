@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { Coffee } from "lucide-react";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -12,7 +13,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="text-3xl">☕</div>
+            <Coffee className="w-8 h-8 text-brewfi-green" />
             <span className="text-2xl font-bold font-grotesk text-brewfi-green glow-text-subtle group-hover:glow-text transition-all duration-300">
               BrewFi
             </span>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Coffee, Sparkles } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="text-2xl">☕</div>
+              <Coffee className="w-7 h-7 text-brewfi-green" />
               <span className="text-xl font-bold font-grotesk text-brewfi-green glow-text-subtle">
                 BrewFi
               </span>
