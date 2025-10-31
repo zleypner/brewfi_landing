@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import FeatureCard from "@/components/FeatureCard";
 import { 
   ArrowRight, 
@@ -82,7 +83,18 @@ export default function Home() {
       </section>
 
       {/* Guide Section - El Guía */}
-      <section className="section-container bg-brewfi-darkGray/50">
+      <section className="section-container relative overflow-hidden min-h-[360px] md:min-h-[420px]">
+        {/* Background image for "Somos baristas digitales" */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <Image
+            src="/3.png"
+            alt="Baristas digitales"
+            fill
+            className="object-cover md:object-contain opacity-30 md:opacity-50"
+            priority
+          />
+          <div className="absolute inset-0 bg-brewfi-dark/40" />
+        </div>
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text-subtle font-grotesk flex items-center justify-center gap-3">
             Somos baristas digitales 
@@ -248,7 +260,20 @@ export default function Home() {
       </section>
 
       {/* Final CTA Section - Llamado a la Acción */}
-      <section className="section-container bg-brewfi-darkGray/50 text-center">
+      <section className="section-container bg-brewfi-darkGray/50 text-center relative overflow-hidden min-h-[360px] md:min-h-[420px]">
+        {/* Background banner image for CTA (preserves 1608x608 ratio) */}
+        <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
+          <div className="absolute inset-0 hidden">
+            <Image
+              src="/1.png"
+              alt="BrewFi CTA banner"
+              fill
+              className="object-contain opacity-40"
+              priority
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-brewfi-dark/60 via-brewfi-dark/40 to-brewfi-dark/60" />
+        </div>
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-bold mb-6 glow-text font-grotesk">
             Solo las primeras 50 cafeterías tendrán acceso prioritario
