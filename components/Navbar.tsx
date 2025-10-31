@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Coffee } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -12,11 +12,14 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group">
-            <Coffee className="w-8 h-8 text-brewfi-green" />
-            <span className="text-2xl font-bold font-grotesk text-brewfi-green glow-text-subtle group-hover:glow-text transition-all duration-300">
-              BrewFi
-            </span>
+          <Link href="/" className="flex items-center group">
+            <Image 
+              src="/logo.svg" 
+              alt="BrewFi Logo" 
+              width={150} 
+              height={60}
+              className="transition-all duration-300 group-hover:scale-105"
+            />
           </Link>
 
           {/* Desktop CTA */}

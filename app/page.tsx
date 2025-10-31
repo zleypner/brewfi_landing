@@ -250,10 +250,8 @@ export default function Home() {
       {/* Final CTA Section - Llamado a la Acción */}
       <section className="section-container bg-brewfi-darkGray/50 text-center">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 glow-text font-grotesk flex items-center justify-center gap-4">
-            Las primeras 50 cafeterías tendrán acceso prioritario 
-            <Coffee className="w-12 h-12 inline" />
-            <Rocket className="w-12 h-12 inline" />
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 glow-text font-grotesk">
+            Solo las primeras 50 cafeterías tendrán acceso prioritario
           </h2>
           <p className="text-2xl text-gray-300 mb-12">
             No te quedes fuera.

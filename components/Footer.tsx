@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Coffee, Sparkles } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -8,12 +8,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <Coffee className="w-7 h-7 text-brewfi-green" />
-              <span className="text-xl font-bold font-grotesk text-brewfi-green glow-text-subtle">
-                BrewFi
-              </span>
-            </div>
+            <Image 
+              src="/logo.svg" 
+              alt="BrewFi Logo" 
+              width={120} 
+              height={50}
+            />
             <p className="text-gray-400 text-sm">
               La nueva forma de fidelizar clientes y aceptar pagos digitales en tu cafetería.
             </p>
@@ -41,8 +41,8 @@ export default function Footer() {
             <h3 className="text-brewfi-green font-semibold mb-4">Contacto</h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <a href="mailto:hola@brewfi.io" className="hover:text-brewfi-green transition-colors">
-                  hola@brewfi.io
+                <a href="mailto:anwar@brew-fi.com" className="hover:text-brewfi-green transition-colors">
+                  anwar@brew-fi.com
                 </a>
               </li>
               <li className="flex items-center space-x-2">
