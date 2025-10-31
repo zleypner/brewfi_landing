@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { CheckCircle, Coffee, Rocket, Flame, Zap, DollarSign, GraduationCap } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
 export default function WaitlistPage() {
   const [formData, setFormData] = useState({
@@ -14,17 +15,44 @@ export default function WaitlistPage() {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string>("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError("");
 
-    // Simulate form submission (replace with actual API call)
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      // Determine the final country value
+      const finalCountry = formData.country === "Other" ? formData.otherCountry : formData.country;
 
-    console.log("Waitlist signup:", formData);
-    setIsSubmitted(true);
-    setIsSubmitting(false);
+      // Insert data into Supabase
+      const { error: supabaseError } = await supabase
+        .from("waitlist")
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            cafe_name: formData.cafeName,
+            country: finalCountry,
+            created_at: new Date().toISOString(),
+          },
+        ]);
+
+      if (supabaseError) {
+        console.error("Error submitting form:", supabaseError);
+        setError("Error al enviar el formulario. Por favor intenta de nuevo.");
+        setIsSubmitting(false);
+        return;
+      }
+
+      setIsSubmitted(true);
+      setIsSubmitting(false);
+    } catch (err) {
+      console.error("Error:", err);
+      setError("Error al enviar el formulario. Por favor intenta de nuevo.");
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -180,6 +208,13 @@ export default function WaitlistPage() {
                             transition-all duration-300"
                   placeholder="Escribe tu país"
                 />
+              </div>
+            )}
+
+            {/* Error Message */}
+            {error && (
+              <div className="p-4 bg-red-900/20 border border-red-500 rounded-lg text-red-400">
+                {error}
               </div>
             )}
 
