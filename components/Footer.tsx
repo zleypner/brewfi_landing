@@ -40,11 +40,6 @@ export default function Footer() {
           <div>
             <h3 className="text-brewfi-green font-semibold mb-4">Contacto</h3>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li>
-                <a href="mailto:anwar@brew-fi.com" className="hover:text-brewfi-green transition-colors">
-                  anwar@brew-fi.com
-                </a>
-              </li>
               <li className="flex items-center space-x-2">
                 <span>Construido sobre</span>
                 <span className="text-brewfi-green">Avalanche ☄️</span>
