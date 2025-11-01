@@ -82,3 +82,5 @@ To view waitlist submissions:
 3. Click on the `waitlist` table
 4. You'll see all submissions in real-time
 
+
+

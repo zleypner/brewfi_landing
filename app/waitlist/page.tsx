@@ -79,9 +79,9 @@ export default function WaitlistPage() {
             Te contactaremos pronto con más información sobre cómo llevar tu cafetería <span className="text-brewfi-green font-semibold">{formData.cafeName}</span> al futuro.
           </p>
           <div className="space-y-4">
-            <p className="text-gray-400">
+            {/* <p className="text-gray-400">
               Revisa tu email <span className="text-brewfi-green">{formData.email}</span> para confirmar tu registro.
-            </p>
+            </p> */}
             <Link href="/" className="btn-secondary inline-block">
               ← Volver al Inicio
             </Link>
