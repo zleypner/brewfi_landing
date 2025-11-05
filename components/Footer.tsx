@@ -41,8 +41,7 @@ export default function Footer() {
             <h3 className="text-brewfi-green font-semibold mb-4">Contacto</h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li className="flex items-center space-x-2">
-                <span>Construido sobre</span>
-                <span className="text-brewfi-green">Avalanche ☄️</span>
+                <span className="text-brewfi-green">Enterprise-Grade Digital Infrastructure</span>
               </li>
             </ul>
           </div>

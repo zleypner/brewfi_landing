@@ -30,10 +30,36 @@ export default function Home() {
             Haz que tus clientes vuelvan, una taza a la vez.
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-            Tu cafetería puede unirse a la revolución del café con recompensas en cripto.
+            Tu cafetería puede unirse a la revolución del café.
             <br />
             Únete a <span className="text-brewfi-green font-semibold">BrewFi</span> — la nueva forma de fidelizar clientes y aceptar pagos digitales.
           </p>
+          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+            <div className="text-center p-4 bg-brewfi-darkGray/30 rounded-lg border border-brewfi-green/10 hover:border-brewfi-green/30 transition-all">
+              <p className="text-brewfi-green font-semibold text-sm">Pagos en USDT</p>
+            </div>
+            <div className="text-center p-4 bg-brewfi-darkGray/30 rounded-lg border border-brewfi-green/10 hover:border-brewfi-green/30 transition-all">
+              <p className="text-brewfi-green font-semibold text-sm">Ordenar y pagar en la mesa</p>
+            </div>
+            <div className="text-center p-4 bg-brewfi-darkGray/30 rounded-lg border border-brewfi-green/10 hover:border-brewfi-green/30 transition-all">
+              <p className="text-brewfi-green font-semibold text-sm">Programas de fidelidad</p>
+            </div>
+            <div className="text-center p-4 bg-brewfi-darkGray/30 rounded-lg border border-brewfi-green/10 hover:border-brewfi-green/30 transition-all">
+              <p className="text-brewfi-green font-semibold text-sm">Propinas digitales</p>
+            </div>
+          </div>
+          <div className="mt-10 mb-8 relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-brewfi-green/10 to-transparent blur-xl"></div>
+            <div className="relative p-6 bg-brewfi-darkGray/70 rounded-xl border border-brewfi-green/30 backdrop-blur-sm">
+              <div className="flex items-center justify-center gap-3 mb-2">
+                <Lock className="w-6 h-6 text-brewfi-green" />
+                <h3 className="text-xl font-bold text-brewfi-green">Enterprise-Grade Digital Infrastructure</h3>
+              </div>
+              <p className="text-center text-gray-300 text-sm">
+                Respaldado por Organizaciones de Prestigio
+              </p>
+            </div>
+          </div>
           <Link href="/waitlist" className="btn-primary inline-flex items-center gap-2">
             <ArrowRight className="w-5 h-5" />
             Únete a la Lista de Espera
@@ -119,71 +145,71 @@ export default function Home() {
 
           <div className="space-y-6 mb-12">
             <div className="card-dark flex items-start space-x-4 transform hover:scale-102 transition-transform">
-              <div className="text-brewfi-green">
-                <CheckCircle className="w-10 h-10" />
+              <div className="text-brewfi-green text-3xl font-bold">
+                1️⃣
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-brewfi-green mb-2">
                   Instala un POS moderno
                 </h3>
                 <p className="text-gray-400 text-lg">
-                  Terminal de pagos fácil de usar, sin contratos largos ni costos ocultos.
+                  Terminal fácil de usar, sin contratos abusivos ni costos ocultos.
                 </p>
               </div>
             </div>
 
             <div className="card-dark flex items-start space-x-4 transform hover:scale-102 transition-transform">
-              <div className="text-brewfi-green">
-                <CheckCircle className="w-10 h-10" />
+              <div className="text-brewfi-green text-3xl font-bold">
+                2️⃣
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-brewfi-green mb-2">
-                  Acepta pagos con tarjeta, QR o cripto
+                  Acepta pagos con tarjeta, QR o USDT
                 </h3>
                 <p className="text-gray-400 text-lg">
-                  Dale opciones a tus clientes: tarjetas tradicionales, códigos QR o criptomonedas.
+                  La experiencia más fluida para tus clientes.
                 </p>
               </div>
             </div>
 
             <div className="card-dark flex items-start space-x-4 transform hover:scale-102 transition-transform">
-              <div className="text-brewfi-green">
-                <CheckCircle className="w-10 h-10" />
+              <div className="text-brewfi-green text-3xl font-bold">
+                3️⃣
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-brewfi-green mb-2">
-                  Tus clientes ganan $BREWFI tokens con cada compra
+                  Recompensas que enamoran
                 </h3>
                 <p className="text-gray-400 text-lg">
-                  Cada café genera recompensas automáticas. Es como un programa de puntos, pero en blockchain.
+                  Cada compra genera puntos digitales que tus clientes sí usarán.
                 </p>
               </div>
             </div>
 
             <div className="card-dark flex items-start space-x-4 transform hover:scale-102 transition-transform">
-              <div className="text-brewfi-green">
-                <CheckCircle className="w-10 h-10" />
+              <div className="text-brewfi-green text-3xl font-bold">
+                4️⃣
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-brewfi-green mb-2">
-                  Canjean sus tokens por café gratis o envían cafés a amigos
+                  Más retención, más comunidad
                 </h3>
                 <p className="text-gray-400 text-lg">
-                  Tus clientes pueden usar sus tokens para bebidas gratis o regalar café. Marketing viral automático.
+                  Pueden canjear recompensas por consumos gratis o invitar a amigos.
                 </p>
               </div>
             </div>
 
             <div className="card-dark flex items-start space-x-4 transform hover:scale-102 transition-transform">
-              <div className="text-brewfi-green">
-                <CheckCircle className="w-10 h-10" />
+              <div className="text-brewfi-green text-3xl font-bold">
+                5️⃣
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-brewfi-green mb-2">
-                  Tú ves métricas reales de ventas y retención
+                  Métricas accionables
                 </h3>
                 <p className="text-gray-400 text-lg">
-                  Dashboard intuitivo con datos de tus mejores clientes, horarios pico y productos favoritos.
+                  Dashboard con retención, picos de demanda, tickets promedio y favoritos.
                 </p>
               </div>
             </div>
@@ -243,8 +269,8 @@ export default function Home() {
           />
           <FeatureCard
             icon={<Lock className="w-12 h-12" />}
-            title="Seguridad Blockchain"
-            description="Todas las transacciones protegidas por la red Avalanche. Transparente y verificable."
+            title="Seguridad de Nivel Empresarial"
+            description="Todas las transacciones protegidas con infraestructura de nivel enterprise. Transparente y verificable."
           />
           <FeatureCard
             icon={<Heart className="w-12 h-12" />}

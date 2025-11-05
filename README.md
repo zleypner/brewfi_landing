@@ -1,6 +1,6 @@
 # ☕ BrewFi Landing Page
 
-Landing page moderna para **BrewFi** - Sistema de pagos y recompensas con cripto para cafeterías.
+Landing page moderna para **BrewFi** - Sistema de pagos digitales en USDT y recompensas para cafeterías.
 
 ## 🎨 Características
 
@@ -81,7 +81,7 @@ brewfi_landing/
 - **Styling**: TailwindCSS
 - **Language**: TypeScript
 - **Fonts**: Inter & Space Grotesk
-- **Blockchain**: Avalanche ☄️
+- **Infrastructure**: Enterprise-Grade Digital Infrastructure
 
 ## 📝 Próximos Pasos
 
