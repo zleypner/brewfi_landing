@@ -17,7 +17,8 @@ import {
   Lock, 
   Heart, 
   Rocket, 
-  Flame 
+  Flame,
+  Truck 
 } from "lucide-react";
 
 export default function Home() {
@@ -30,9 +31,9 @@ export default function Home() {
             Haz que tus clientes vuelvan, una taza a la vez.
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-            Tu cafetería puede unirse a la revolución del café.
+            Tu negocio puede unirse a la nueva era de la hospitalidad.
             <br />
-            Únete a <span className="text-brewfi-green font-semibold">BrewFi</span> — la nueva forma de fidelizar clientes y aceptar pagos digitales.
+            Únete a <span className="text-brewfi-green font-semibold">BrewFi</span> — la forma moderna de fidelizar clientes y aceptar pagos digitales.
           </p>
           <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
             <div className="text-center p-4 bg-brewfi-darkGray/30 rounded-lg border border-brewfi-green/10 hover:border-brewfi-green/30 transition-all">
@@ -45,22 +46,10 @@ export default function Home() {
               <p className="text-brewfi-green font-semibold text-sm">Programas de fidelidad</p>
             </div>
             <div className="text-center p-4 bg-brewfi-darkGray/30 rounded-lg border border-brewfi-green/10 hover:border-brewfi-green/30 transition-all">
-              <p className="text-brewfi-green font-semibold text-sm">Propinas digitales</p>
+              <p className="text-brewfi-green font-semibold text-sm">Integración Uber Eats</p>
             </div>
           </div>
-          <div className="mt-10 mb-8 relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-brewfi-green/10 to-transparent blur-xl"></div>
-            <div className="relative p-6 bg-brewfi-darkGray/70 rounded-xl border border-brewfi-green/30 backdrop-blur-sm">
-              <div className="flex items-center justify-center gap-3 mb-2">
-                <Lock className="w-6 h-6 text-brewfi-green" />
-                <h3 className="text-xl font-bold text-brewfi-green">Enterprise-Grade Digital Infrastructure</h3>
-              </div>
-              <p className="text-center text-gray-300 text-sm">
-                Respaldado por Organizaciones de Prestigio
-              </p>
-            </div>
-          </div>
-          <Link href="/waitlist" className="btn-primary inline-flex items-center gap-2">
+          <Link href="/waitlist" className="btn-primary inline-flex items-center gap-2 mt-10">
             <ArrowRight className="w-5 h-5" />
             Únete a la Lista de Espera
           </Link>
@@ -110,11 +99,11 @@ export default function Home() {
 
       {/* Guide Section - El Guía */}
       <section className="section-container relative overflow-hidden min-h-[360px] md:min-h-[420px]">
-        {/* Background image for "Somos baristas digitales" */}
+        {/* Background image for guide section */}
         <div className="pointer-events-none absolute inset-0 -z-10">
           <Image
             src="/3.png"
-            alt="Baristas digitales"
+            alt="Soluciones digitales para negocios"
             fill
             className="object-cover md:object-contain opacity-30 md:opacity-50"
             priority
@@ -122,15 +111,11 @@ export default function Home() {
           <div className="absolute inset-0 bg-brewfi-dark/40" />
         </div>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text-subtle font-grotesk flex items-center justify-center gap-3">
-            Somos baristas digitales 
-            <Coffee className="w-10 h-10 inline" />
-            <Laptop className="w-10 h-10 inline" />
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text-subtle font-grotesk">
+            Impulsamos el crecimiento de negocios gastronómicos.
           </h2>
           <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-            En BrewFi, somos desarrolladores Web3 con experiencia real en crear soluciones para el mundo físico.
-            <br /><br />
-            Creamos un sistema que combina <span className="text-brewfi-green font-semibold">pagos rápidos</span>, <span className="text-brewfi-green font-semibold">recompensas en tokens</span>, y <span className="text-brewfi-green font-semibold">datos de lealtad</span> para ayudarte a crecer.
+            Con BrewFi, gestiona <span className="text-brewfi-green font-semibold">pagos</span>, <span className="text-brewfi-green font-semibold">facturación</span> y <span className="text-brewfi-green font-semibold">fidelización</span> desde una sola plataforma: más rápido, más simple y más rentable.
           </p>
         </div>
       </section>
@@ -139,8 +124,7 @@ export default function Home() {
       <section className="section-container">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 glow-text-subtle font-grotesk flex items-center justify-center gap-3">
-            Así funciona BrewFi 
-            <ChevronDown className="w-10 h-10" />
+            🚀 En 3 pasos simples:
           </h2>
 
           <div className="space-y-6 mb-12">
@@ -150,10 +134,10 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-brewfi-green mb-2">
-                  Instala un POS moderno
+                  Conecta y empieza a vender
                 </h3>
                 <p className="text-gray-400 text-lg">
-                  Terminal fácil de usar, sin contratos abusivos ni costos ocultos.
+                  Configura tu punto de venta en minutos, sin contratos ni complicaciones.
                 </p>
               </div>
             </div>
@@ -164,10 +148,10 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-brewfi-green mb-2">
-                  Acepta pagos con tarjeta, QR o USDT
+                  Cobra como quieras
                 </h3>
                 <p className="text-gray-400 text-lg">
-                  La experiencia más fluida para tus clientes.
+                  Acepta pagos con tarjeta, QR o USDT de forma rápida y segura.
                 </p>
               </div>
             </div>
@@ -178,38 +162,10 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-brewfi-green mb-2">
-                  Recompensas que enamoran
+                  Fideliza a tus clientes
                 </h3>
                 <p className="text-gray-400 text-lg">
-                  Cada compra genera puntos digitales que tus clientes sí usarán.
-                </p>
-              </div>
-            </div>
-
-            <div className="card-dark flex items-start space-x-4 transform hover:scale-102 transition-transform">
-              <div className="text-brewfi-green text-3xl font-bold">
-                4️⃣
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-brewfi-green mb-2">
-                  Más retención, más comunidad
-                </h3>
-                <p className="text-gray-400 text-lg">
-                  Pueden canjear recompensas por consumos gratis o invitar a amigos.
-                </p>
-              </div>
-            </div>
-
-            <div className="card-dark flex items-start space-x-4 transform hover:scale-102 transition-transform">
-              <div className="text-brewfi-green text-3xl font-bold">
-                5️⃣
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-brewfi-green mb-2">
-                  Métricas accionables
-                </h3>
-                <p className="text-gray-400 text-lg">
-                  Dashboard con retención, picos de demanda, tickets promedio y favoritos.
+                  Cada compra genera puntos digitales que se canjean por consumos o recompensas.
                 </p>
               </div>
             </div>
@@ -228,22 +184,18 @@ export default function Home() {
       <section className="section-container bg-gradient-to-b from-brewfi-darkGray/50 to-brewfi-dark">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 glow-text font-grotesk">
-            Convierte tu cafetería en una comunidad.
+            Fortalece tu marca con experiencias que generan lealtad.
           </h2>
           <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed">
-            BrewFi hace que tus clientes vuelvan una y otra vez.
-            <br />
-            Cada compra crea una conexión, y cada token fortalece tu marca.
+            BrewFi ayuda a los negocios gastronómicos a transformar cada compra en una relación, y cada token en valor de marca.
           </p>
 
           <div className="relative py-12">
             <div className="absolute inset-0 flex items-center justify-center opacity-10">
-              <Coffee className="w-48 h-48" />
+              <Heart className="w-48 h-48" />
             </div>
             <blockquote className="relative text-3xl md:text-4xl font-bold text-brewfi-green italic glow-text-subtle">
-              &ldquo;Deja de vender café.
-              <br />
-              Comienza a crear comunidad.&rdquo;
+              &ldquo;Del servicio a la conexión: así crece un negocio con propósito.&rdquo;
             </blockquote>
           </div>
         </div>
@@ -258,14 +210,14 @@ export default function Home() {
             description="Cobra en segundos con cualquier método de pago. Reduce filas y mejora la experiencia."
           />
           <FeatureCard
-            icon={<Gift className="w-12 h-12" />}
-            title="Recompensas Automáticas"
-            description="Cada compra genera tokens. Sin tarjetas, sin complicaciones. Todo digital."
-          />
-          <FeatureCard
             icon={<BarChart3 className="w-12 h-12" />}
             title="Datos en Tiempo Real"
             description="Conoce a tus mejores clientes, horarios pico y productos favoritos."
+          />
+          <FeatureCard
+            icon={<Truck className="w-12 h-12" />}
+            title="Integración Uber Eats"
+            description="Sincroniza tu menú y pedidos de delivery directamente con Uber Eats desde una sola plataforma."
           />
           <FeatureCard
             icon={<Lock className="w-12 h-12" />}
@@ -302,10 +254,10 @@ export default function Home() {
         </div>
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-bold mb-6 glow-text font-grotesk">
-            Solo las primeras 50 cafeterías tendrán acceso prioritario
+            Seleccionaremos 25 negocios líderes
           </h2>
-          <p className="text-2xl text-gray-300 mb-12">
-            No te quedes fuera.
+          <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed">
+            para ser los primeros en usar la plataforma que está transformando la industria gastronómica — negocios que marcarán el estándar de la nueva hospitalidad.
           </p>
           <Link href="/waitlist" className="btn-primary inline-flex items-center gap-2 text-xl px-12 py-5">
             <Flame className="w-6 h-6" />
