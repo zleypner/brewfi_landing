@@ -18,7 +18,11 @@ import {
   Heart, 
   Rocket, 
   Flame,
-  Truck 
+  Truck,
+  Star,
+  TrendingUp,
+  Handshake,
+  ArrowRightCircle
 } from "lucide-react";
 
 export default function Home() {
@@ -26,16 +30,27 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Section - El Héroe */}
       <section className="section-container pt-32 md:pt-40 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 glow-text font-grotesk animate-glow">
-            Haz que tus clientes vuelvan, una taza a la vez.
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-            Tu negocio puede unirse a la nueva era de la hospitalidad.
-            <br />
-            Únete a <span className="text-brewfi-green font-semibold">BrewFi</span> — la forma moderna de fidelizar clientes y aceptar pagos digitales.
-          </p>
-          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto">
+          {/* Mission Statement with Improved Hierarchy */}
+          <div className="space-y-8 md:space-y-12 mb-12">
+            {/* H2 - Section Title */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-brewfi-green glow-text animate-glow leading-tight">
+              Infraestructura de nivel empresarial para quienes hacen grande a la industria.
+            </h1>
+
+            {/* Body Text - Mission Statement */}
+            <p className="text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed" style={{ lineHeight: '1.8' }}>
+              Nuestra infraestructura digital está diseñada para grandes franquicias y cadenas hoteleras. 
+              Pero también sabemos que los pequeños y medianos negocios gastronómicos merecen acceso a herramientas de primer nivel para competir y prosperar.
+            </p>
+
+            {/* Body Text - Call to Action */}
+            <p className="text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed" style={{ lineHeight: '1.8' }}>
+              Por eso, vamos a seleccionar <strong className="text-brewfi-green font-bold">25 negocios</strong> que recibirán un impulso real para crecer con tecnología de alto rendimiento.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-8">
             <div className="text-center p-4 bg-brewfi-darkGray/30 rounded-lg border border-brewfi-green/10 hover:border-brewfi-green/30 transition-all">
               <p className="text-brewfi-green font-semibold text-sm">Pagos en USDT</p>
             </div>
@@ -49,7 +64,8 @@ export default function Home() {
               <p className="text-brewfi-green font-semibold text-sm">Integración Uber Eats</p>
             </div>
           </div>
-          <Link href="/waitlist" className="btn-primary inline-flex items-center gap-2 mt-10">
+          
+          <Link href="/waitlist" className="btn-primary inline-flex items-center gap-2 text-xl px-12 py-5">
             <ArrowRight className="w-5 h-5" />
             Únete a la Lista de Espera
           </Link>
@@ -87,12 +103,6 @@ export default function Home() {
               <h3 className="text-xl font-bold text-red-400 mb-2">Clientes que no regresan</h3>
               <p className="text-gray-400">Sin razones para volver, tus clientes se van a la competencia.</p>
             </div>
-          </div>
-
-          <div className="text-center">
-            <p className="text-2xl md:text-3xl font-bold text-brewfi-green glow-text-subtle">
-              Cada día que pasa sin lealtad digital, pierdes ingresos y comunidad.
-            </p>
           </div>
         </div>
       </section>
@@ -180,27 +190,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Transformation Section - La Transformación */}
-      <section className="section-container bg-gradient-to-b from-brewfi-darkGray/50 to-brewfi-dark">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 glow-text font-grotesk">
-            Fortalece tu marca con experiencias que generan lealtad.
-          </h2>
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed">
-            BrewFi ayuda a los negocios gastronómicos a transformar cada compra en una relación, y cada token en valor de marca.
-          </p>
-
-          <div className="relative py-12">
-            <div className="absolute inset-0 flex items-center justify-center opacity-10">
-              <Heart className="w-48 h-48" />
-            </div>
-            <blockquote className="relative text-3xl md:text-4xl font-bold text-brewfi-green italic glow-text-subtle">
-              &ldquo;Del servicio a la conexión: así crece un negocio con propósito.&rdquo;
-            </blockquote>
-          </div>
-        </div>
-      </section>
-
       {/* Features Grid */}
       <section className="section-container">
         <div className="grid md:grid-cols-3 gap-8">
@@ -254,14 +243,14 @@ export default function Home() {
         </div>
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-bold mb-6 glow-text font-grotesk">
-            Seleccionaremos 25 negocios líderes
+            Ayudamos a quienes hacen grande a la comunidad.
           </h2>
           <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed">
-            para ser los primeros en usar la plataforma que está transformando la industria gastronómica — negocios que marcarán el estándar de la nueva hospitalidad.
+            Solo 25 emprendimientos gastronómicos serán seleccionados para recibir tecnología utilizada por las grandes cadenas.
           </p>
           <Link href="/waitlist" className="btn-primary inline-flex items-center gap-2 text-xl px-12 py-5">
-            <Flame className="w-6 h-6" />
-            Unirme a la lista de espera
+            <Heart className="w-6 h-6" />
+            Postula tu negocio hoy
           </Link>
         </div>
       </section>
