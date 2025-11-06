@@ -254,10 +254,10 @@ export default function Home() {
         </div>
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-bold mb-6 glow-text font-grotesk">
-            Seleccionaremos 25 negocios líderes
+            Solo las primeras 50 cafeterías tendrán acceso prioritario
           </h2>
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed">
-            para ser los primeros en usar la plataforma que está transformando la industria gastronómica — negocios que marcarán el estándar de la nueva hospitalidad.
+          <p className="text-2xl text-gray-300 mb-12">
+            No te quedes fuera.
           </p>
           <Link href="/waitlist" className="btn-primary inline-flex items-center gap-2 text-xl px-12 py-5">
             <Flame className="w-6 h-6" />
