@@ -15,7 +15,7 @@ export default function Footer() {
               height={50}
             />
             <p className="text-gray-400 text-sm">
-              La nueva forma de fidelizar clientes y aceptar pagos digitales en tu cafetería.
+              La nueva forma de fidelizar clientes y aceptar pagos digitales en tu negocio.
             </p>
           </div>
 
