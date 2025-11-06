@@ -7,9 +7,9 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "BrewFi - Fideliza Clientes con Cripto",
-  description: "Únete a la revolución del café. Sistema de pagos y recompensas para cafeterías modernas.",
-  keywords: ["cafetería", "cripto", "pagos", "fidelización", "blockchain", "Web3"],
+  title: "BrewFi - Fideliza Clientes",
+  description: "Únete a la revolución del café. Sistema de pagos en USDT y recompensas para cafeterías modernas.",
+  keywords: ["cafetería", "USDT", "pagos digitales", "fidelización", "POS moderno", "propinas digitales", "programas de lealtad"],
 };
 
 export default function RootLayout({
