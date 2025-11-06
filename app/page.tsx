@@ -28,44 +28,49 @@ import {
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section - El Héroe */}
-      <section className="section-container pt-32 md:pt-40 text-center">
+      {/* Hero Section - Mobile-First Story Pattern */}
+      <section className="relative pt-32 md:pt-40 pb-24 md:pb-32 px-6">
         <div className="max-w-3xl mx-auto">
-          {/* Mission Statement with Improved Hierarchy */}
-          <div className="space-y-8 md:space-y-12 mb-12">
-            {/* H2 - Section Title */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-brewfi-green glow-text animate-glow leading-tight">
-              Infraestructura de nivel empresarial para quienes hacen grande a la industria.
+          {/* Hero Content - Mobile Optimized */}
+          <div className="flex flex-col gap-8 text-center">
+            
+            {/* H1 - Strong Title - Mobile First */}
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brewfi-green glow-text animate-glow leading-tight max-w-[90vw] md:max-w-full mx-auto">
+              Infraestructura de nivel empresarial a tu alcance.
             </h1>
 
-            {/* Body Text - Mission Statement */}
-            <p className="text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed" style={{ lineHeight: '1.8' }}>
-              Nuestra infraestructura digital está diseñada para grandes franquicias y cadenas hoteleras. 
-              Pero también sabemos que los pequeños y medianos negocios gastronómicos merecen acceso a herramientas de primer nivel para competir y prosperar.
+            {/* Support Text - Smaller, easier to read */}
+            <p className="text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-[90vw] md:max-w-2xl mx-auto">
+              Tecnología que impulsa a los negocios gastronómicos que quieren crecer.
             </p>
 
-            {/* Body Text - Call to Action */}
-            <p className="text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed" style={{ lineHeight: '1.8' }}>
-              Por eso, vamos a seleccionar <strong className="text-brewfi-green font-bold">25 negocios</strong> que recibirán un impulso real para crecer con tecnología de alto rendimiento.
-            </p>
-          </div>
+            {/* Bold Highlight - High Contrast */}
+            <div className="my-4">
+              <p className="text-xl md:text-2xl lg:text-3xl font-bold text-white bg-gradient-to-r from-transparent via-brewfi-green/20 to-transparent py-4 px-6 rounded-lg border border-brewfi-green/30 glow-text-subtle max-w-[90vw] md:max-w-2xl mx-auto">
+                Solo 25 negocios serán seleccionados para recibir un impulso de alto rendimiento.
+              </p>
+            </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-8">
-            <div className="text-center p-4 bg-brewfi-darkGray/30 rounded-lg border border-brewfi-green/10 hover:border-brewfi-green/30 transition-all">
-              <p className="text-brewfi-green font-semibold text-sm">Pagos en USDT</p>
-            </div>
-            <div className="text-center p-4 bg-brewfi-darkGray/30 rounded-lg border border-brewfi-green/10 hover:border-brewfi-green/30 transition-all">
-              <p className="text-brewfi-green font-semibold text-sm">Ordenar y pagar en la mesa</p>
-            </div>
-            <div className="text-center p-4 bg-brewfi-darkGray/30 rounded-lg border border-brewfi-green/10 hover:border-brewfi-green/30 transition-all">
-              <p className="text-brewfi-green font-semibold text-sm">Programas de fidelidad</p>
-            </div>
-            <div className="text-center p-4 bg-brewfi-darkGray/30 rounded-lg border border-brewfi-green/10 hover:border-brewfi-green/30 transition-all">
-              <p className="text-brewfi-green font-semibold text-sm">Integración Uber Eats</p>
-            </div>
           </div>
-          
-          <Link href="/waitlist" className="btn-primary inline-flex items-center gap-2 text-xl px-12 py-5">
+        </div>
+
+        {/* Sticky CTA - Mobile Only, Fixed Bottom */}
+        <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-gradient-to-t from-brewfi-dark via-brewfi-dark to-transparent md:hidden">
+          <Link 
+            href="/waitlist" 
+            className="btn-primary w-full flex items-center justify-center gap-2 text-lg py-4 rounded-xl shadow-2xl"
+          >
+            <ArrowRight className="w-5 h-5" />
+            Unirme a la lista de espera
+          </Link>
+        </div>
+
+        {/* Desktop CTA - Centered, Not Sticky */}
+        <div className="hidden md:flex justify-center mt-12">
+          <Link 
+            href="/waitlist" 
+            className="btn-primary inline-flex items-center gap-2 text-xl px-12 py-5"
+          >
             <ArrowRight className="w-5 h-5" />
             Únete a la Lista de Espera
           </Link>
