@@ -22,7 +22,8 @@ import {
   Star,
   TrendingUp,
   Handshake,
-  ArrowRightCircle
+  ArrowRightCircle,
+  CircleDot
 } from "lucide-react";
 
 export default function Home() {
@@ -139,13 +140,14 @@ export default function Home() {
       <section className="section-container">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 glow-text-subtle font-grotesk flex items-center justify-center gap-3">
-            🚀 En 3 pasos simples:
+            <Rocket className="w-10 h-10 text-brewfi-green" />
+            En 3 pasos simples:
           </h2>
 
           <div className="space-y-6 mb-12">
             <div className="card-dark flex items-start space-x-4 transform hover:scale-102 transition-transform">
-              <div className="text-brewfi-green text-3xl font-bold">
-                1️⃣
+              <div className="text-brewfi-green flex-shrink-0">
+                <CircleDot className="w-10 h-10" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-brewfi-green mb-2">
@@ -158,8 +160,8 @@ export default function Home() {
             </div>
 
             <div className="card-dark flex items-start space-x-4 transform hover:scale-102 transition-transform">
-              <div className="text-brewfi-green text-3xl font-bold">
-                2️⃣
+              <div className="text-brewfi-green flex-shrink-0">
+                <CircleDot className="w-10 h-10" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-brewfi-green mb-2">
@@ -172,8 +174,8 @@ export default function Home() {
             </div>
 
             <div className="card-dark flex items-start space-x-4 transform hover:scale-102 transition-transform">
-              <div className="text-brewfi-green text-3xl font-bold">
-                3️⃣
+              <div className="text-brewfi-green flex-shrink-0">
+                <CircleDot className="w-10 h-10" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-brewfi-green mb-2">
