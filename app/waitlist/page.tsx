@@ -2,12 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { CheckCircle, Coffee, Rocket, Flame, Zap, DollarSign, GraduationCap } from "lucide-react";
+import { CheckCircle, Coffee, Flame } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 
 export default function WaitlistPage() {
   const [formData, setFormData] = useState({
-    name: "",
     email: "",
     cafeName: "",
     country: "",
@@ -31,7 +30,6 @@ export default function WaitlistPage() {
         .from("waitlist")
         .insert([
           {
-            name: formData.name,
             email: formData.email,
             cafe_name: formData.cafeName,
             country: finalCountry,
@@ -74,7 +72,7 @@ export default function WaitlistPage() {
             <Coffee className="w-12 h-12" />
           </h1>
           <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-            Gracias por unirte a la lista de espera, <span className="text-brewfi-green font-semibold">{formData.name}</span>.
+            Gracias por unirte a la lista de espera.
             <br /><br />
             Te contactaremos pronto con más información sobre cómo llevar tu cafetería <span className="text-brewfi-green font-semibold">{formData.cafeName}</span> al futuro.
           </p>
@@ -97,37 +95,16 @@ export default function WaitlistPage() {
         <div className="max-w-2xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 glow-text font-grotesk flex items-center justify-center gap-4">
-              Únete a la Revolución 
-              <Coffee className="w-14 h-14" />
-              <Rocket className="w-14 h-14" />
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-brewfi-green glow-text-subtle font-grotesk">
+              Solo 25 negocios seleccionados obtendrán acceso gratuito.
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              Completa el formulario y sé una de las primeras 50 cafeterías en acceder a BrewFi.
+            <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+              Restaurantes, cafeterías y sodas son el corazón de la economía local, y queremos ayudarlos a liderar la nueva era digital gastronómica.
             </p>
           </div>
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="card-dark space-y-6">
-            {/* Name */}
-            <div>
-              <label htmlFor="name" className="block text-sm font-semibold text-brewfi-green mb-2">
-                Tu Nombre *
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full bg-brewfi-dark border border-gray-700 rounded-lg px-4 py-3 text-white
-                          focus:outline-none focus:border-brewfi-green focus:ring-2 focus:ring-brewfi-green/50
-                          transition-all duration-300"
-                placeholder="Juan Pérez"
-              />
-            </div>
-
             {/* Email */}
             <div>
               <label htmlFor="email" className="block text-sm font-semibold text-brewfi-green mb-2">
@@ -236,31 +213,9 @@ export default function WaitlistPage() {
 
             {/* Privacy Notice */}
             <p className="text-sm text-gray-500 text-center">
-              Al enviar este formulario, aceptas que BrewFi se ponga en contacto contigo sobre nuestros servicios.
+              Al enviar este formulario, reafirmas tu compromiso con la innovación y el crecimiento de tu negocio junto a BrewFi.
             </p>
           </form>
-
-          {/* Benefits Reminder */}
-          <div className="mt-12 grid md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="text-brewfi-green mb-2 flex justify-center">
-                <Zap className="w-12 h-12" />
-              </div>
-              <p className="text-sm text-gray-400">Acceso prioritario</p>
-            </div>
-            <div className="text-center">
-              <div className="text-brewfi-green mb-2 flex justify-center">
-                <DollarSign className="w-12 h-12" />
-              </div>
-              <p className="text-sm text-gray-400">Precios especiales</p>
-            </div>
-            <div className="text-center">
-              <div className="text-brewfi-green mb-2 flex justify-center">
-                <GraduationCap className="w-12 h-12" />
-              </div>
-              <p className="text-sm text-gray-400">Capacitación gratuita</p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
