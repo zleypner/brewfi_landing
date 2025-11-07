@@ -23,60 +23,33 @@ import {
   TrendingUp,
   Handshake,
   ArrowRightCircle,
-  Circle
+  CircleDot
 } from "lucide-react";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Two Column Layout */}
-      <section className="relative pt-32 md:pt-40 pb-24 md:pb-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
+      {/* Hero Section - Mobile-First Story Pattern */}
+      <section className="relative pt-32 md:pt-40 pb-24 md:pb-32 px-6">
+        <div className="max-w-3xl mx-auto">
+          {/* Hero Content - Mobile Optimized */}
+          <div className="flex flex-col gap-8 text-center">
             
-            {/* Left Column - Image */}
-            <div className="w-full md:w-1/2 relative h-[400px] md:h-[600px] rounded-2xl overflow-hidden">
-              <Image
-                src="/relaxclient.jpg"
-                alt="Cliente satisfecho usando BrewFi"
-                fill
-                className="object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-brewfi-dark/30 to-transparent" />
-            </div>
+            {/* H1 - Strong Title - Mobile First */}
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brewfi-green glow-text animate-glow leading-tight max-w-[90vw] md:max-w-full mx-auto">
+              Infraestructura de nivel empresarial a tu alcance.
+            </h1>
 
-            {/* Right Column - Text Content */}
-            <div className="w-full md:w-1/2 flex flex-col gap-8">
-              
-              {/* H1 - Strong Title */}
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brewfi-green glow-text animate-glow leading-tight">
-                Infraestructura de nivel empresarial a tu alcance.
-              </h1>
+            {/* Support Text - Smaller, easier to read */}
+            <p className="text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-[90vw] md:max-w-2xl mx-auto">
+              Tecnología que impulsa a los negocios gastronómicos que quieren crecer.
+            </p>
 
-              {/* Support Text */}
-              <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                Tecnología que impulsa a los negocios gastronómicos que quieren crecer.
+            {/* Bold Highlight - High Contrast */}
+            <div className="my-4">
+              <p className="text-xl md:text-2xl lg:text-3xl font-bold text-white bg-gradient-to-r from-transparent via-brewfi-green/20 to-transparent py-4 px-6 rounded-lg border border-brewfi-green/30 glow-text-subtle max-w-[90vw] md:max-w-2xl mx-auto">
+                Solo 25 negocios serán seleccionados para recibir un impulso de alto rendimiento.
               </p>
-
-              {/* Bold Highlight */}
-              <div className="p-6 bg-gradient-to-r from-brewfi-darkGray/50 via-brewfi-darkGray/70 to-brewfi-darkGray/50 rounded-xl border border-brewfi-green/30">
-                <p className="text-xl md:text-2xl font-bold text-white glow-text-subtle">
-                  Solo 25 negocios serán seleccionados para recibir un impulso de alto rendimiento.
-                </p>
-              </div>
-
-              {/* CTA Button - Desktop */}
-              <div className="hidden md:block">
-                <Link 
-                  href="/waitlist" 
-                  className="btn-primary inline-flex items-center gap-2 text-xl px-12 py-5"
-                >
-                  <ArrowRight className="w-5 h-5" />
-                  Únete a la Lista de Espera
-                </Link>
-              </div>
-
             </div>
 
           </div>
@@ -90,6 +63,17 @@ export default function Home() {
           >
             <ArrowRight className="w-5 h-5" />
             Unirme a la lista de espera
+          </Link>
+        </div>
+
+        {/* Desktop CTA - Centered, Not Sticky */}
+        <div className="hidden md:flex justify-center mt-12">
+          <Link 
+            href="/waitlist" 
+            className="btn-primary inline-flex items-center gap-2 text-xl px-12 py-5"
+          >
+            <ArrowRight className="w-5 h-5" />
+            Únete a la Lista de Espera
           </Link>
         </div>
       </section>
@@ -130,29 +114,25 @@ export default function Home() {
       </section>
 
       {/* Guide Section - El Guía */}
-      <section>
-        {/* Text Section */}
-        <div className="section-container text-center">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text-subtle font-grotesk">
-              Impulsamos el crecimiento de negocios gastronómicos.
-            </h2>
-            <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-              Con BrewFi, gestiona <span className="text-brewfi-green font-semibold">pagos</span>, <span className="text-brewfi-green font-semibold">facturación</span> y <span className="text-brewfi-green font-semibold">fidelización</span> desde una sola plataforma: más rápido, más simple y más rentable.
-            </p>
-          </div>
-        </div>
-
-        {/* Background Image Section - Below Text */}
-        <div className="relative w-full h-[360px] md:h-[420px] overflow-hidden">
+      <section className="section-container relative overflow-hidden min-h-[360px] md:min-h-[420px]">
+        {/* Background image for guide section */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
           <Image
             src="/3.png"
             alt="Soluciones digitales para negocios"
             fill
-            className="object-cover"
+            className="object-cover md:object-contain opacity-30 md:opacity-50"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-brewfi-dark/40 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-brewfi-dark/40" />
+        </div>
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text-subtle font-grotesk">
+            Impulsamos el crecimiento de negocios gastronómicos.
+          </h2>
+          <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+            Con BrewFi, gestiona <span className="text-brewfi-green font-semibold">pagos</span>, <span className="text-brewfi-green font-semibold">facturación</span> y <span className="text-brewfi-green font-semibold">fidelización</span> desde una sola plataforma: más rápido, más simple y más rentable.
+          </p>
         </div>
       </section>
 
@@ -167,7 +147,7 @@ export default function Home() {
           <div className="space-y-6 mb-12">
             <div className="card-dark flex items-start space-x-4 transform hover:scale-102 transition-transform">
               <div className="text-brewfi-green flex-shrink-0">
-                <Circle className="w-10 h-10 fill-current" />
+                <CircleDot className="w-10 h-10" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-brewfi-green mb-2">
@@ -181,7 +161,7 @@ export default function Home() {
 
             <div className="card-dark flex items-start space-x-4 transform hover:scale-102 transition-transform">
               <div className="text-brewfi-green flex-shrink-0">
-                <Circle className="w-10 h-10 fill-current" />
+                <CircleDot className="w-10 h-10" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-brewfi-green mb-2">
@@ -195,7 +175,7 @@ export default function Home() {
 
             <div className="card-dark flex items-start space-x-4 transform hover:scale-102 transition-transform">
               <div className="text-brewfi-green flex-shrink-0">
-                <Circle className="w-10 h-10 fill-current" />
+                <CircleDot className="w-10 h-10" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-brewfi-green mb-2">
@@ -254,33 +234,31 @@ export default function Home() {
       </section>
 
       {/* Final CTA Section - Llamado a la Acción */}
-      <section className="bg-brewfi-darkGray/50">
-        {/* Text and Button Section */}
-        <div className="section-container text-center">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 glow-text font-grotesk">
-              Ayudamos a quienes hacen grande a la comunidad.
-            </h2>
-            <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed">
-              Solo 25 emprendimientos gastronómicos serán seleccionados para recibir tecnología utilizada por las grandes cadenas.
-            </p>
-            <Link href="/waitlist" className="btn-primary inline-flex items-center gap-2 text-xl px-12 py-5">
-              <ArrowRight className="w-6 h-6" />
-              Postula tu negocio hoy
-            </Link>
+      <section className="section-container bg-brewfi-darkGray/50 text-center relative overflow-hidden min-h-[360px] md:min-h-[420px]">
+        {/* Background banner image for CTA (preserves 1608x608 ratio) */}
+        <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
+          <div className="absolute inset-0 hidden md:block">
+            <Image
+              src="/1.png"
+              alt="BrewFi CTA banner"
+              fill
+              className="object-contain opacity-40"
+              priority
+            />
           </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-brewfi-dark/60 via-brewfi-dark/40 to-brewfi-dark/60" />
         </div>
-
-        {/* Background Image Section - Below Text */}
-        <div className="relative w-full h-[360px] md:h-[420px] overflow-hidden">
-          <Image
-            src="/1.png"
-            alt="BrewFi CTA banner"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-brewfi-dark/40 via-transparent to-transparent" />
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 glow-text font-grotesk">
+            Ayudamos a quienes hacen grande a la comunidad.
+          </h2>
+          <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed">
+            Solo 25 emprendimientos gastronómicos serán seleccionados para recibir tecnología utilizada por las grandes cadenas.
+          </p>
+          <Link href="/waitlist" className="btn-primary inline-flex items-center gap-2 text-xl px-12 py-5">
+            <Heart className="w-6 h-6" />
+            Postula tu negocio hoy
+          </Link>
         </div>
       </section>
     </div>
