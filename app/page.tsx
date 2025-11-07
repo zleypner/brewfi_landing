@@ -35,12 +35,13 @@ export default function Home() {
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
             
             {/* Left Column - Image */}
-            <div className="w-full md:w-1/2 relative h-[400px] md:h-[600px] rounded-2xl overflow-hidden">
+            <div className="w-full md:w-1/2 relative h-[500px] md:h-[600px] rounded-2xl overflow-hidden">
               <Image
                 src="/relaxclient.jpg"
-                alt="Cliente satisfecho usando BrewFi"
+                alt="Barista creando latte art con BrewFi"
                 fill
                 className="object-cover"
+                style={{ objectPosition: '50% 60%' }}
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brewfi-dark/30 to-transparent" />
@@ -145,13 +146,28 @@ export default function Home() {
 
         {/* Background Image Section - Below Text */}
         <div className="relative w-full h-[360px] md:h-[420px] overflow-hidden">
-          <Image
-            src="/3.png"
-            alt="Soluciones digitales para negocios"
-            fill
-            className="object-cover"
-            priority
-          />
+          {/* Mobile Image - Coffee Mug with Latte Art */}
+          <div className="md:hidden absolute inset-0">
+            <Image
+              src="/coffemug.jpeg"
+              alt="Latte art BrewFi"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          
+          {/* Desktop/Tablet Image - Original */}
+          <div className="hidden md:block absolute inset-0">
+            <Image
+              src="/3.png"
+              alt="Soluciones digitales para negocios"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          
           <div className="absolute inset-0 bg-gradient-to-t from-brewfi-dark/40 via-transparent to-transparent" />
         </div>
       </section>
